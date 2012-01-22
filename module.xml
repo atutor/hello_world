@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?> 
 <module version="0.1"> 
     <name lang="en">Hello World</name> 
-    <description lang="en">This is a demo module that can be used as a skeleton for developing your own module. It implements all the features that a module can implment, including its own privileges, a directory, course backup/restore and delete, and an SQL file.</description> 
+    <description lang="en">This is a demo module that can be used as a skeleton for developing your own module. It implements all the features that a module can implment, including its own privileges, a directory, course backup/restore and delete, an SQL file, and more. See the module developer documentation for more information about creating modules at: http://help.atutor.ca/developer/modules.html</description> 
     <maintainers>
         <maintainer> 
             <name>ATutor Team</name> 
@@ -11,8 +11,8 @@
     <url>http://atutor.ca</url> 
     <license>BSD</license> 
 	<release> 
-        <version>0.6</version> 
-        <date>2010-12-06</date> 
+        <version>0.7</version> 
+        <date>2012-22-01</date> 
         <state>stable</state> 
         <notes></notes> 
     </release> 
