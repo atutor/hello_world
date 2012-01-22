@@ -5,11 +5,23 @@
 */
 
 function helloworld_news() {
-	global $db;
-	$sql = "SELECT something FROM a table WHERE date < NOW() LIMIT 3";
-	if ($result = mysql_query($sql, $db)) {
+	global $db, $enrolled_courses, $system_courses;
+	$news = array();
+
+	if ($enrolled_courses == ''){
+		return $news;
+	} 
+
+	$sql = 'SELECT * FROM '.TABLE_PREFIX.'news WHERE course_id IN '.$enrolled_courses.' ORDER BY date DESC';
+	$result = mysql_query($sql, $db);
+	if($result){
 		while($row = mysql_fetch_assoc($result)){
-			$news[] = $row['something'];
+			$news[] = array('time'=>$row['date'], 
+							'object'=>$row, 
+							'alt'=>_AT('announcements'),
+							'course'=>$system_courses[$row['course_id']]['title'],
+							'thumb'=>'images/flag_blue.png',
+							'link'=>$row['body']);
 		}
 	}
 	return $news;
