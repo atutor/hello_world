@@ -1,5 +1,6 @@
 <?php 
 /* start output buffering: */
+global $savant;
 ob_start(); ?>
 
 hello world
