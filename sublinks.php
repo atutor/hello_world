@@ -12,12 +12,11 @@ global $db;
 
 $link_limit = 3;		// Number of links to be displayed on "detail view" box
 
-$sql = "SELECT hello_world_id, value FROM ".TABLE_PREFIX."hello_world WHERE course_id=".$_SESSION[course_id].
-       " ORDER BY value LIMIT $link_limit";
-$result = mysql_query($sql, $db);
+$sql = "SELECT hello_world_id, value FROM %shello_world WHERE course_id=%d ORDER BY value LIMIT %d";
+$result = queryDB($sql, array(TABLE_PREFIX, $_SESSION['course_id'], $link_limit));
 
-if (mysql_num_rows($result) > 0) {
-	while ($row = mysql_fetch_assoc($result)) {
+if(count($result) > 0){
+    foreach($result as $row){
 		/****
 		* SUBLINK_TEXT_LEN, VALIDATE_LENGTH_FOR_DISPLAY are defined in include/lib/constance.lib.inc
 		* SUBLINK_TEXT_LEN determins the maxium length of the string to be displayed on "detail view" box.

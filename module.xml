@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?> 
 <module version="0.1"> 
     <name lang="en">Hello World</name> 
-    <description lang="en">This is a demo module that can be used as a skeleton for developing your own module. It implements all the features that a module can implment, including its own privileges, a directory, course backup/restore and delete, an SQL file, and more. See the module developer documentation for more information about creating modules at: http://help.atutor.ca/developer/modules.html</description> 
+    <description lang="en">This is a demo module that can be used as a skeleton for developing your own module. It implements all the features that a module can implement, including its own privileges, a directory, course backup/restore and delete, an SQL file, and more. See the module developer documentation for more information about creating modules at: http://help.atutor.ca/developer/modules.html</description> 
     <maintainers>
         <maintainer> 
             <name>ATutor Team</name> 
@@ -11,9 +11,9 @@
     <url>http://atutor.ca</url> 
     <license>BSD</license> 
 	<release> 
-        <version>0.8</version> 
-        <date>2012-22-01</date> 
+        <version>0.9</version> 
+        <date>2014-08-08</date> 
         <state>stable</state> 
-        <notes></notes> 
+        <notes>This version of the Hello World module has been updated for ATutor 2.2+ replacing mysql queries with queryDB()</notes> 
     </release> 
 </module>

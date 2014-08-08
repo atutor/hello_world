@@ -12,10 +12,11 @@ function helloworld_news() {
 		return $news;
 	} 
 
-	$sql = 'SELECT * FROM '.TABLE_PREFIX.'news WHERE course_id IN '.$enrolled_courses.' ORDER BY date DESC';
-	$result = mysql_query($sql, $db);
-	if($result){
-		while($row = mysql_fetch_assoc($result)){
+	$sql = "SELECT * FROM %snews WHERE course_id IN '%s' ORDER BY date DESC";
+	$result = queryDB($sql, array(TABLE_PREFIX, $enrolled_courses));
+	
+	if(count($result) > 0){
+	    foreach($result as $row){
 			$news[] = array('time'=>$row['date'], 
 							'object'=>$row, 
 							'alt'=>_AT('announcements'),
